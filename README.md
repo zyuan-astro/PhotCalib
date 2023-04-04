@@ -1,7 +1,7 @@
 # PhotCalib
  Calibration tool for Prisitine CaHK data 
  
- ### Pre-requisite
+ ### Prerequisites
  
  pytorch 
  astropy
