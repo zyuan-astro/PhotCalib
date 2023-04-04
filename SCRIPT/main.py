@@ -6,6 +6,8 @@ from math import *
 from matplotlib.pyplot import *
 import pandas as pd
 import numpy as np
+from astropy.table import Table
+
 sys.path.append("../SCRIPT/")
 
 from calib import *
@@ -38,14 +40,15 @@ print (run_list)
 for i in range(len(run_list)):
     
     run = run_list[i]
-    p = pd.read_csv(in_path+"combined_catalogue_%s_sel"%run, delim_whitespace=True)
-    p= p.rename(columns={"#RA": "RA", 'CaHK': 'CaHK_uncalib'})
+    p = Table.read(in_path+"combined_catalogue_%s_sel.fits"%run)
+    
+    print (p)
     
     t = Generate_NewCat(run, p)
     
     tic = time.perf_counter()
     
-    t.to_csv(out_path+"%s.csv"%run, index=False)
+    t.write(out_path+"combined_catalogue_%s_sel_calib.fits"%run, overwrite=True)
     
     toc = time.perf_counter()
     

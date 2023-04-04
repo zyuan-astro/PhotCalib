@@ -26,7 +26,7 @@ def add_correction(t, model):
     xn = np.array(t['Xg']/19000, dtype=np.float64)
     yn = np.array(t['Yg']/19000, dtype=np.float64)
 
-    zn = np.array(t['CaHK_uncalib'])
+    zn = np.array(t['CaHK'])
     zn_err = np.array(t['d_CaHK'])
 
     
