@@ -10,7 +10,7 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 import numpy as np
 
-from deform_norm import *
+from deform import *
 from model_old import *
 
 
@@ -19,15 +19,15 @@ import torch.nn.functional as F
 from torch.optim.lr_scheduler import * 
 
 # run M1
-# DEVICE = torch.device("cpu")
+DEVICE = torch.device("cpu")
 # run CUDA on GPU servers
-DEVICE = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
-print (DEVICE)
+# DEVICE = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+# print (DEVICE)
 
-print (torch.cuda.get_device_name(0))
+# print (torch.cuda.get_device_name(0))
 
 
-in_path = "../INPUT/RUN/"
+in_path = "../INPUT/"
 out_path = "../OUTPUT"
 
 

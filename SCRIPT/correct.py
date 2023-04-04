@@ -13,12 +13,15 @@ from deform_norm import *
 # run M1
 DEVICE = torch.device("cpu")
 
+# run CUDA on GPU servers
+# DEVICE = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+# print (DEVICE)
+
+# print (torch.cuda.get_device_name(0))
 
 
 
-
-
-def add_correction(t):
+def add_correction(t, model):
     
     xn = np.array(t['Xg']/19000, dtype=np.float64)
     yn = np.array(t['Yg']/19000, dtype=np.float64)
@@ -26,27 +29,18 @@ def add_correction(t):
     zn = np.array(t['CaHK_uncalib'])
     zn_err = np.array(t['d_CaHK'])
 
-
-    fn_id = np.array(t['image_runid'])
-
-    ra = np.float64(t['RA'])
-    dec = np.float64(t['Dec'])
     
     x = torch.from_numpy(xn).to(DEVICE)
     y = torch.from_numpy(yn).to(DEVICE)
-    f_id = torch.from_numpy(fn_id).to(torch.int64).to(DEVICE)
+    fs_id = torch.from_numpy(np.zeros(len(xn))).to(torch.int64).to(DEVICE)
     
-    tic = time.perf_counter()
+    
 
-    dz = model(x, y, f_id).cpu().detach().numpy().T[0]
+    dz = model(x, y, fs_id).cpu().detach().numpy().T[0]
     zpt = model.zpt.cpu().detach().numpy().T
-    dz_zpt =  zpt[fn_id]
-    dz_fov = dz - zpt[fn_id]
+    dz_zpt =  zpt[0]
+    dz_fov = dz - dz_zpt
 
     z_new = zn-dz
-
-    toc = time.perf_counter()
-    print(f"Apply the model in {toc - tic:0.4f} seconds")
-    
-    
-    return dz_zpt, dz_fov, z_new
+   
+    return dz_fov, z_new
