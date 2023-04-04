@@ -8,6 +8,9 @@
  
  ### Calibrate file
 
+ ```
+ cd SCRIPT
+ ```
  
  ```
  python main.py 
