@@ -1,5 +1,7 @@
 # PhotCalib
- Calibration tool for Prisitine CaHK data. For more details see Martin, Starkenburg & Yuan 2023
+======================================================
+
+Calibration tool for Prisitine CaHK data. For more details see Martin, Starkenburg & Yuan 2023
 
 ## Installation
 
@@ -44,4 +46,8 @@ Specify the device and training parameters (the followings are the default setti
 - `thr` (float) is the threshold of the scheduler.
 - `mom` (float) is the momentum of gradient descent.
 
+# Citing this work
 
+```
+coming soon
+```
