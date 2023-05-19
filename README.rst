@@ -20,23 +20,31 @@ https://github.com/zyuan-astro/PhotCalib/assets/20896020/26806571-87b4-4624-b44c
 
 
 Installation
------------
+----------------
 
 Before installtion, make sure you have pytorch or install essential dependencies :
 .. code::
 
   pip install -r requirements.txt
 
+
+
+* Installation from PyPI
+
 .. code::
 
-  download the repository and run the setup
+  pip install pyphot
+
+* Manual installation
+
+download the repository and run the setup
 
 .. code::
 
   python setup.py install      
 
 Getting started 
------------
+----------------
 
 .. code::
 
@@ -72,7 +80,7 @@ Specify the device and training parameters (the followings are the default setti
 * mom (float) is the momentum of gradient descent.
 
 Citing this work
------------
+----------------
 
 .. code::
 
