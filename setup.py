@@ -1,13 +1,14 @@
 from setuptools import setup, find_packages
 
 def readme():
-    with open('README.md') as f:
+    with open('README.rst') as f:
         return f.read()
 
 setup(name = "photcalib",
     version = 1.0,
     description = "calibration tool for photometric data",
     long_description = readme(),
+    long_description_content_type="text/x-rst",
     author = "Zhen Yuan",
     author_email = "",
     url = "https://github.com/zyuan-astro/PhotCalib",
