@@ -1,5 +1,11 @@
 **/.ipynb_checkpoints/*
-*.egg*
+
 **/.DS_Store
+
+
+# Distribution / packaging
+build/
+dist/
+*.egg*
 *.egg-info/
 
