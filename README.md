@@ -10,8 +10,11 @@ https://github.com/zyuan-astro/PhotCalib/assets/20896020/07018137-40fb-4e04-b96f
 
 
 
+https://github.com/zyuan-astro/PhotCalib/assets/20896020/26806571-87b4-4624-b44c-068567b22d61
 
-https://github.com/zyuan-astro/PhotCalib/assets/20896020/f2c93f1f-58ef-4521-bd19-a231facd1d08
+
+
+
 
 
 
