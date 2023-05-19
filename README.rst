@@ -1,4 +1,5 @@
-# PhotCalib
+PhotCalib
+-----------
 
 Calibration tool for Prisitine CaHK data. For more details see Martin, Starkenburg & Yuan 2023
 
@@ -18,7 +19,8 @@ https://github.com/zyuan-astro/PhotCalib/assets/20896020/26806571-87b4-4624-b44c
 
 
 
-## Installation
+Installation
+-----------
 
 Before installtion, make sure you have pytorch or install essential dependencies :
 .. code::
@@ -33,7 +35,8 @@ Before installtion, make sure you have pytorch or install essential dependencies
 
   python setup.py install      
 
- ## Getting started 
+Getting started 
+-----------
 
 .. code::
 
@@ -68,7 +71,8 @@ Specify the device and training parameters (the followings are the default setti
 * thr (float) is the threshold of the scheduler.
 * mom (float) is the momentum of gradient descent.
 
-# Citing this work
+Citing this work
+-----------
 
 .. code::
 
