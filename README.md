@@ -38,7 +38,7 @@ Specify the device and training parameters (the followings are the default setti
  python calib_raw.py 17Am05 -D cpu -lr 1e-6 -n 400 -mom 0.9 -thr 1e-2
  ```
 
-- `D` (str) is the DEVICE (default:cpu, mps, gpu) to run pytorch. mps is not faster than cpu on M1. If gpus is chosen, it will use the first graphic card `cuda:0` by default.
+- `D` (str) is the device (default:`cpu`, `mps`, `gpu`) to run pytorch. 
 - `n` (int) is the number of training epochs.
 - `lr` (float) is the initial learning rate, which will decrease using scheduler (see [REDUCELRONPLATEAU](https://pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.ReduceLROnPlateau.html)
 - `thr` (float) is the threshold of the scheduler.
