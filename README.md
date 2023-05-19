@@ -32,7 +32,8 @@ To train calibration run model:
  python calib_raw.py 17Am05
  ```
 Substitute 17Am05 to the run for calibration with the input file as examples/data/inputs_run.npy
-Specify the device and training parameters (the followings are defaults)
+
+Specify the device and training parameters (the followings are the default settings)
  ```
  python calib_raw.py 17Am05 -D cpu -lr 1e-6 -n 400 -mom 0.9 -thr 1e-2
  ```
