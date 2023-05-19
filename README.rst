@@ -23,6 +23,7 @@ Installation
 ----------------
 
 Before installtion, make sure you have pytorch or install essential dependencies :
+
 .. code::
 
   pip install -r requirements.txt
