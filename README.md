@@ -2,6 +2,8 @@
 
 Calibration tool for Prisitine CaHK data. For more details see Martin, Starkenburg & Yuan 2023
 
+https://github.com/zyuan-astro/PhotCalib/assets/20896020/6dc537fe-678e-4a97-9a2d-a9df25b2de2f
+
 ## Installation
 
 Before installtion, make sure you have pytorch or install essential dependencies :
