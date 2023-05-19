@@ -24,7 +24,7 @@ To Calibrate CaHK data using the run model trained by the main survey:
  ```
 Substitute 17Am05 to the run you need and make sure the input data for calibration has the same format as that in the examples/data/*.fits
 
-- `D` (str) is the device (default:cpu, mps, gpu) to run pytorch. mps is not faster than cpu on M1. If gpus is chosen, it will use the first graphic card `cuda:0` by default.
+- `D` (str) is the device (default:`cpu`, `mps`, `gpu`) to run pytorch. `mps` is not faster than `cpu` on M1. If `gpu` is chosen, it will use the first graphic card `cuda:0` by default.
 
 
 To train calibration run model:
