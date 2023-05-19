@@ -33,7 +33,7 @@ Before installtion, make sure you have pytorch or install essential dependencies
 
 .. code::
 
-  pip install pyphot
+  pip install photcalib
 
 * Manual installation
 
