@@ -1,10 +1,6 @@
 # PhotCalib
- Calibration tool for Prisitine CaHK data 
+ Calibration tool for Prisitine CaHK data. For more details see Martin, Starkenburg & Yuan 2023
  
- ### Prerequisites
- 
-* [Astropy](https://www.astropy.org)
-* [Pytorch](https://pytorch.org/get-started/locally/)
  
  ### Calibrate file
 
