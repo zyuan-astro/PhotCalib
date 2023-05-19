@@ -1,4 +1,5 @@
 **/.ipynb_checkpoints/*
 *.egg*
 **/.DS_Store
+*.egg-info/
 
