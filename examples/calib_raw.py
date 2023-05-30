@@ -8,7 +8,7 @@ import numpy as np
 from astropy.table import Table
 import torch
 
-from photcalib import generate_newcat, Deform, argparse_apply_model
+from photcalib import generate_newcat, deform, argparse_apply_model
 
 
 in_path = "data/"

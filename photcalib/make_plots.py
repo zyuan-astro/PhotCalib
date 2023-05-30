@@ -9,7 +9,7 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 import numpy as np
 import torch
-from .model_nn import Deform
+from .deform_norm import deform
 from .model_old import FovOldModel
 
 

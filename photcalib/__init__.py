@@ -8,7 +8,7 @@ The package mainly contains:
   calib                     return the calibration model 
   applycalib                return the calibrated values 
 """
-from .model_nn import Deform
+from .deform_norm import deform
 from .training import TrainingModule
 from .make_plots import make_diagnostic_plots
 from .apply_calib import generate_newcat

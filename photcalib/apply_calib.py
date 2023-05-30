@@ -14,11 +14,11 @@ import torch
 
 def add_correction(DEVICE, t, model):
     
-    xn = np.array(t['Xg']/19000, dtype=np.float32)
-    yn = np.array(t['Yg']/19000, dtype=np.float32)
+    xn = np.array(t['Xg']/19000, dtype=np.float64)
+    yn = np.array(t['Yg']/19000, dtype=np.float64)
 
-    zn = np.array(t['CaHK'], dtype=np.float32)
-    zn_err = np.array(t['d_CaHK'], dtype=np.float32)
+    zn = np.array(t['CaHK'], dtype=np.float64)
+    zn_err = np.array(t['d_CaHK'], dtype=np.float64)
 
     
     x = torch.from_numpy(xn).to(DEVICE)
