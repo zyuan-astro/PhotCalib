@@ -4,7 +4,6 @@ PhotCalib
 Calibration tool for Prisitine CaHK data. For more details see Martin, Starkenburg & Yuan 2023
 
 
-https://static.wixstatic.com/media/6563e6_24f5c15dd4f7433993dc897e59c26090~mv2.png/v1/fill/w_600,h_180,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/6563e6_24f5c15dd4f7433993dc897e59c26090~mv2.png
 
 https://github.com/zyuan-astro/PhotCalib/assets/20896020/07018137-40fb-4e04-b96f-2ba3f767fade
 
