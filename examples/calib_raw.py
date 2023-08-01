@@ -44,6 +44,7 @@ mod_files = glob.glob(mod_path+"*%s*.mod"%run)
 mod_file = max(mod_files, key=os.path.getctime)
 print ("run model:", mod_file)
 
+
 p = Table.read(in_path+"%s"%input)
 print ("input file:", input)    
 
@@ -54,7 +55,7 @@ t = generate_newcat(DEVICE, mod, p)
 tic = time.perf_counter()
     
 t.write(out_path+"%s_calib.fits"%input.split('.fits')[0], overwrite=True)
-    
+
 toc = time.perf_counter()
     
 print(f"Saved calibrated {run } in {toc - tic:0.4f} seconds as output/{input.split('.fits')[0]}_calib.fits")

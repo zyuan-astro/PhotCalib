@@ -38,29 +38,23 @@ def add_correction(DEVICE, t, model):
     
 def generate_newcat(DEVICE, mod, p):
      
-      
-    batch_size = 1000
-    num_batches = int(len(p) / batch_size)
+  
+    fn_nb = p['image_nb']
+    fn_nb_list = np.unique(fn_nb)
+
+    # p['run'] = run
     
+
     dz_fov = np.array([0])
     z_new = np.array([0])
-    
+        
     tic = time.perf_counter()
     
-    for batch in range(num_batches):
-        
-        batch_p = p[batch*batch_size:(batch+1)*batch_size]   
+    for i in range(len(fn_nb_list)):
+
+        ind = fn_nb == fn_nb_list[i]
+        batch_p = p[ind]   
         batch_dz_fov, batch_z_new = add_correction(DEVICE, batch_p, mod)
-        
-        
-        dz_fov = np.append(dz_fov, batch_dz_fov)
-        z_new = np.append(z_new, batch_z_new)
-        
-    if len(p) - (batch+1)*batch_size > 0:
-        
-        batch_p = p[(batch+1)*batch_size:] 
-        batch_dz_fov, batch_z_new = add_correction(DEVICE, batch_p, mod)
-        
         
         dz_fov = np.append(dz_fov, batch_dz_fov)
         z_new = np.append(z_new, batch_z_new)
