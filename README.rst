@@ -4,10 +4,7 @@ PhotCalib
 Calibration tool for Prisitine CaHK data. For more details see Martin, Starkenburg & Yuan 2023
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 0f6f0803b9efbd7c2565ebf2f3c629cadf2109ea
 Installation
 ----------------
 
