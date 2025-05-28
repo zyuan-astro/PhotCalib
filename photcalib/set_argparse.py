@@ -4,7 +4,7 @@ handeling all the argparse setup
 
 import argparse
 
-_epilog = "Contact authors: Zhen Yuan (zhen.yuan@astro.unistra.fr)"
+_epilog = "Contact authors: Zhen Yuan (zhen.yuan@nju.edu.cn)"
 # _igrins_version = '1.0.0'
 def argparse_train_model():
     """Take care of all the argparse stuff."""

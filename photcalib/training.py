@@ -6,7 +6,7 @@ import pandas as pd
 import numpy as np
 
 from matplotlib.pyplot import *
-from .model_nn import Deform
+from .deform_norm import deform
 
 
 
@@ -132,7 +132,7 @@ class TrainingModule():
  
         
 
-        model_batch = Deform(2, [200, 200, 200, 200], 1, nf).to(DEVICE)
+        model_batch = deform(2, [200, 200, 200, 200], 1, nf).to(DEVICE)
         optimizer_batch = torch.optim.SGD(model_batch.parameters(), lr=self.lr, momentum=self.momentum) 
         scheduler = ReduceLROnPlateau(optimizer_batch, mode='min',
             factor=0.5, patience=20, threshold=self.thr, threshold_mode='rel')

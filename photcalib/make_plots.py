@@ -413,7 +413,7 @@ def make_diagnostic_plots(DEVICE, run):
     im=ax.scatter(z0, r_new, c=z0_err, s=2, marker="s", 
               cmap='jet', vmin=vmin, vmax=vmax)
     cb=colorbar(im,cax=cax,orientation="vertical", format="%.2f",ticks=np.linspace(vmin, vmax,4))
-    cb.set_label(r'$\delta$CaHK$_{Gaia}}$', fontsize=20)
+    cb.set_label(r'$\delta$CaHK$_{\mathrm{Gaia}}$', fontsize=20)
     cb.ax.tick_params(labelsize=20)
     
     ax.axhline(np.percentile(r_new, 16), zorder=1)
