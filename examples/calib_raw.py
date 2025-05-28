@@ -28,13 +28,13 @@ if args.device != None:
     else:
         DEVICE = torch.device(args.device)
 
-    print (DEVICE)
+    print ("DEVICE", DEVICE)
 
 else:
 
     DEVICE = torch.device("cpu")
 
-    print (DEVICE)
+    print ("DEVICE", DEVICE)
 
 
 

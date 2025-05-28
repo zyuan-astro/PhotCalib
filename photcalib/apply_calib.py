@@ -9,25 +9,27 @@ import numpy as np
 # sys.path.append("../SCRIPT/")
 # from correct import *
 import torch
+torch.set_default_dtype(torch.float32)
 
 
 
 def add_correction(DEVICE, t, model):
     
-    xn = np.array(t['Xg']/19000, dtype=np.float64)
-    yn = np.array(t['Yg']/19000, dtype=np.float64)
+    xn = np.array(t['Xg']/19000)
+    yn = np.array(t['Yg']/19000)
 
-    zn = np.array(t['CaHK'], dtype=np.float64)
-    zn_err = np.array(t['d_CaHK'], dtype=np.float64)
+    zn = np.array(t['CaHK'])
+    zn_err = np.array(t['d_CaHK'])
 
     
     x = torch.from_numpy(xn).to(DEVICE)
     y = torch.from_numpy(yn).to(DEVICE)
     fs_id = torch.from_numpy(np.zeros(len(xn))).to(torch.int64).to(DEVICE)
     
-    
+    print (x.dtype, y.dtype, fs_id.dtype)
 
     dz = model(x, y, fs_id).cpu().detach().numpy().T[0]
+
     zpt = model.zpt.cpu().detach().numpy().T
     dz_zpt =  zpt[0]
     dz_fov = dz - dz_zpt
