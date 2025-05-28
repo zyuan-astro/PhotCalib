@@ -71,4 +71,8 @@ Citing this work
 
 .. code::
 
-  coming soon
+## Citations
+
+If you use this package, please cite it as follows:
+
+**Martin, F.N.**, **Starkenburg, E.**, & **Yuan, Z.** et al. (A&A 2024). https://www.aanda.org/articles/aa/full_html/2024/12/aa47633-23/aa47633-23.html
