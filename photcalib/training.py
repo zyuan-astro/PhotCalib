@@ -71,7 +71,7 @@ class TrainingModule():
         z_err = torch.unsqueeze(torch.from_numpy(zn_err), dim=1).to(DEVICE)
         z0 = torch.unsqueeze(torch.from_numpy(z0n), dim=1).to(DEVICE)
         z0_err = torch.unsqueeze(torch.from_numpy(z0n_err), dim=1).to(DEVICE)
-        f_id = torch.from_numpy(fn_id).to(torch.int64).to(DEVICE)
+        f_id = torch.from_numpy(fn_id).to(torch.int32).to(DEVICE)
         nf = torch.tensor(num_fields).to(DEVICE)
 
         batch_size = np.max(num_fs) 

@@ -20,10 +20,12 @@ class FovOldModel():
         self.z_amp = amplitude_list[ind]
         self.power = power_list[ind]
 #         best_center_offset = center_offset_list[ind]
+        print (self.xc)
         
     def calib(self,x,y):
         
         dz = self.z_amp*np.power(np.sqrt((x-self.xc)**2.+(y-self.yc)**2.),self.power);
+        
     
         return dz
         
