@@ -69,12 +69,11 @@ def argparse_apply_model():
         ''', epilog = _epilog
         )
     parser.add_argument(
-        "run", action="store", help="Enter the run used for calibration",
+       "run_mod", action="store", help="Enter the run model for calibration",
         type=str
         )
     parser.add_argument(
-        "input", action="store", 
-        help="The raw datafile to be calibrated",
+        "run_calib", action="store", help="Enter the run to be calibrated",
         type=str
         )
     parser.add_argument(

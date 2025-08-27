@@ -15,7 +15,6 @@ from .model_old import FovOldModel
 
 mod_path = "model/"
 out_path = "output/" 
-fig_path = "figure/" 
 
 
 batch2_list =  ["21Am01", "21Am02"]
@@ -23,10 +22,40 @@ batch3_list = ["21Am03", "21Am04", "21Am05", "21Am06", "21Bm01", "21Bm02", "21Bm
 batch4_list = ['17Bm02']
 batch5_list = ['22Am04', '22Am05', '22Am06', '22Am07', '22Bm01', '22Bm02']
 
-
 def make_diagnostic_plots(DEVICE, run):
+
+    fig_path = "figure/"+run+"/"
     
-    semester = run.split("m")[0]
+
+    if not os.path.exists(fig_path):
+
+        os.makedirs(fig_path)    
+        print ("created new figure path", fig_path)
+
+    semester = run[:3]
+
+    if run in batch2_list:
+        
+        batch = "batch2"
+        
+    if run in batch3_list:
+        
+        batch = "batch3"
+        
+    if run in batch4_list:
+        
+        batch = "batch4"
+        
+    if run in batch5_list:
+        
+        batch = "batch5"
+
+    if int(semester[:2]) > 22:
+
+        batch = "batch5"
+    
+    semester = batch
+    
     err = 0.1
     outputs_files = glob.glob(out_path+"*%s*.npy"%run) 
     # err = param0.split("_err_")[1].split("_")[0]
@@ -119,29 +148,9 @@ def make_diagnostic_plots(DEVICE, run):
         z_old[ind_f] = z1_old_f - zpt_old[i]   
         
     r_old = z_old - z0
-     
-    batch = semester
-    
-    if run in batch2_list:
-        
-        batch = "batch2"
-        
-        
-    if run in batch3_list:
-        
-        batch = "batch3"
-        
-    if run in batch4_list:
-        
-        batch = "batch4"
-        
-    if run in batch5_list:
-        
-        batch = "batch5"
     
 
-   
-    
+ 
 
     n_bin = 50
     # bin_size = 500
@@ -592,7 +601,7 @@ def make_diagnostic_plots(DEVICE, run):
 
     figure(figsize = (8,6))
     gs = gridspec.GridSpec(1, 1)
-    gs.update(left=0.16, right= 0.9, bottom = 0.1, top = 0.9, wspace=0.4, hspace = 0.)
+    gs.update(left=0.16, right= 0.9, bottom = 0.15, top = 0.9, wspace=0.4, hspace = 0.)
     ax1 = subplot(gs[0, 0])
 
     ax1.hist(r_raw[ind_valid]-np.median(r_raw[ind_valid]), 
@@ -617,7 +626,7 @@ def make_diagnostic_plots(DEVICE, run):
 
     figure(figsize = (8,6))
     gs = gridspec.GridSpec(1, 1)
-    gs.update(left=0.16, right= 0.9, bottom = 0.1, top = 0.9, wspace=0.4, hspace = 0.)
+    gs.update(left=0.16, right= 0.9, bottom = 0.15, top = 0.9, wspace=0.4, hspace = 0.)
     ax1 = subplot(gs[0, 0])
     ax1.hist(r_raw[ind_valid]-np.median(r_raw[ind_valid]), 
      lw=2, bins = 50, range=(-.2, .3), alpha=0.5, color='gray',
