@@ -38,12 +38,14 @@ Getting started
   cd examples
  
 
-To Calibrate CaHK data using the run model trained by the main survey:
+To Calibrate CaHK data using the trained run model:
 .. code::
 
-  python calib_raw.py 17Am05 combined_catalogue_17Am05_sel.fits -D cpu
+python calib_raw.py 25Am02 25Am02  -D cpu
  
-Substitute 17Am05 to the run you need and make sure the input data for calibration has the same format as that in the examples/data/.fits
+The first run name represents the run to train the calibration model.
+
+The second run name represents the run to be calibrated.
 
 * D (str) is the device (default:cpu, gpu) to run pytorch. If gpu is chosen, it will use the first graphic card cuda:0 by default.
 
@@ -51,9 +53,9 @@ Substitute 17Am05 to the run you need and make sure the input data for calibrati
 To train calibration run model:
 .. code::
 
-  python calib_mod.py 17Am05
+  python calib_mod.py 25Am02
 
-Substitute 17Am05 to the run for calibration with the input file as examples/data/inputs_run.npy
+Spceify the run for calibration using the input file as examples/data/inputs_run.npy, which is generated using Prepare_input.ipynb
 
 Specify the device and training parameters (the followings are the default settings)
 .. code::
