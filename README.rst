@@ -1,8 +1,7 @@
 PhotCalib
 -----------
 
-Calibration tool for Prisitine CaHK data. For more details see Martin, Starkenburg & Yuan 2023
-
+Calibration tool for the Prisitine survey
 
 
 Installation
