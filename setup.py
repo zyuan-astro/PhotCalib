@@ -5,7 +5,7 @@ def readme():
         return f.read()
 
 setup(name = "photcalib",
-    version = 0.3,
+    version = 0.5,
     description = "calibration tool for photometric data",
     long_description = readme(),
     long_description_content_type="text/x-rst",
